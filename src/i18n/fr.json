@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "hello": "Bonjour {{name}} !",
+    "id": "Identifiant",
+    "name": "Nom",
+    "englishName": "Nom anglophone",
+    "bodyType": "Type",
+    "discoveredBy": "Découvert par",
+    "discoveryDate": "Dâte de découverte",
+    "density": "Densité",
+    "avgTemp": "Température moyenne",
+    "dimension": "Dimension",
+    "gravity": "Gravité",
+    "inclination": "Inclinaison",
+    "escape": "Applatissement",
+    "searchInputPlaceholder": "Rechercher une planete..."
+  }
+}

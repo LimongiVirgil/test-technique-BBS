@@ -52,7 +52,8 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ planets, search, onChange }) => {
         onChange={onChange}
       />
       <TableContainer component={Paper}>
-        <Table>
+        <Table aria-label="caption table">
+          <caption>List of planets</caption>
           <TableHead>
             <TableRow>
               <TableCell>{translate('name')}</TableCell>

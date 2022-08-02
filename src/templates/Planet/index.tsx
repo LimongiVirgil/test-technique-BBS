@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async'
 
 import Icon from '../../components/Icon'
 import { Icons } from '../../components/Icon/types'
+import PlanetBodyType from '../../components/PlanetBodyType'
 
 type Details = {
   id?: string
@@ -16,6 +17,7 @@ type Details = {
   gravity?: string
   inclination?: string
   escape?: string
+  bodyType?: string
 }
 
 export type PlanetTemplateProps = {
@@ -45,6 +47,10 @@ const PlanetTemplate: FC<PlanetTemplateProps> = ({ details, onNavigateBack }) =>
           onClick={onNavigateBack}
         />
         <SC.Title>{details.name}</SC.Title>
+        <SC.Text>
+          {displayValue('bodyType', details.bodyType)}
+          <PlanetBodyType bodyType={details.bodyType} />
+        </SC.Text>
         <SC.Text>{displayValue('density', details.density)}</SC.Text>
         <SC.Text>{displayValue('gravity', details.gravity)}</SC.Text>
         <SC.Text>{displayValue('avgTemp', details.avgTemp)}</SC.Text>

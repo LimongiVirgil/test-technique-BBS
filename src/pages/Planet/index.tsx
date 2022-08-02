@@ -23,7 +23,8 @@ const PlanetPage: React.FC<RouteComponentProps> = () => {
       actions.planets.getPlanetDetails({
         id: params.id,
         params: {
-          data: 'id,name,discoveryDate,avgTemp,dimension,density,gravity,moons,inclination,escape',
+          data:
+            'id,name,discoveryDate,avgTemp,dimension,density,gravity,moons,inclination,escape,bodyType',
         },
       })
     )

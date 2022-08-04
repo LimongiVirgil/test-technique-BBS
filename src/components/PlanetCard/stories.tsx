@@ -3,6 +3,7 @@ import { Story } from '@storybook/react'
 
 import defaultExport from '../../../.storybook/config/defaultExport'
 
+import { PlanetCardArgs } from './mocks'
 import PlanetCard from '.'
 import { PlanetCardProps } from './types'
 
@@ -13,4 +14,8 @@ export default defaultExport({
   containerStyle: { padding: '3rem' },
 })
 
-export const PlanetCardSimple: Story<PlanetCardProps> = (arg) => <PlanetCard {...arg} />
+export const PlanetCardError: Story<PlanetCardProps> = (arg) => <PlanetCard {...arg} />
+const PlanetCardSimple: Story<PlanetCardProps> = (arg) => <PlanetCard {...arg} />
+
+export const Default = PlanetCardSimple.bind({})
+Default.args = PlanetCardArgs

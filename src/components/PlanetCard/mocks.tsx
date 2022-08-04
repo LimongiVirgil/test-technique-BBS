@@ -1,6 +1,6 @@
-import { BodyCardProps } from './types'
+import { PlanetCardProps } from './types'
 
-export const BodyCardArgs: BodyCardProps = {
+export const PlanetCardArgs: PlanetCardProps = {
   celestialBodyName: 'Terre',
   link: 'https://api.le-systeme-solaire.net/rest/bodies/terre',
   style: { width: 250 + 'px' },

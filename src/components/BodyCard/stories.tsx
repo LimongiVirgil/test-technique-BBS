@@ -3,6 +3,7 @@ import { Story } from '@storybook/react'
 
 import defaultExport from '../../../.storybook/config/defaultExport'
 
+import { BodyCardArgs } from './mocks'
 import BodyCard from '.'
 import { BodyCardProps } from './types'
 
@@ -13,4 +14,7 @@ export default defaultExport({
   containerStyle: { padding: '3rem' },
 })
 
-export const PlanetCardSimple: Story<BodyCardProps> = (arg) => <BodyCard {...arg} />
+const BodyCardSimple: Story<BodyCardProps> = (arg) => <BodyCard {...arg} />
+
+export const Default = BodyCardSimple.bind({})
+Default.args = BodyCardArgs

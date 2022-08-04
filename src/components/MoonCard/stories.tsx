@@ -3,6 +3,7 @@ import { Story } from '@storybook/react'
 
 import defaultExport from '../../../.storybook/config/defaultExport'
 
+import { MoonCardArgs } from './mocks'
 import MoonCard from '.'
 import { MoonCardProps } from './types'
 
@@ -13,4 +14,8 @@ export default defaultExport({
   containerStyle: { padding: '3rem' },
 })
 
-export const PlanetCardSimple: Story<MoonCardProps> = (arg) => <MoonCard {...arg} />
+export const MoonCardError: Story<MoonCardProps> = (arg) => <MoonCard {...arg} />
+const MoonCardSimple: Story<MoonCardProps> = (arg) => <MoonCard {...arg} />
+
+export const Default = MoonCardSimple.bind({})
+Default.args = MoonCardArgs

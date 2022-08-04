@@ -5,7 +5,9 @@ import { Helmet } from 'react-helmet-async'
 
 import Icon from '../../components/Icon'
 import { Icons } from '../../components/Icon/types'
-import PlanetBodyType from '../../components/PlanetBodyType'
+import PlanetBodyTypeIcon from '../../components/PlanetBodyTypeIcon'
+import PlanetCard from '../../components/PlanetCard'
+import MoonCard from '../../components/MoonCard'
 
 type Details = {
   id?: string
@@ -18,6 +20,16 @@ type Details = {
   inclination?: string
   escape?: string
   bodyType?: string
+  moons?: [
+    {
+      moon: string
+      rel: string
+    }
+  ]
+  aroundPlanet?: {
+    planet: string
+    rel: string
+  }
 }
 
 export type PlanetTemplateProps = {
@@ -49,7 +61,7 @@ const PlanetTemplate: FC<PlanetTemplateProps> = ({ details, onNavigateBack }) =>
         <SC.Title>{details.name}</SC.Title>
         <SC.Text>
           {displayValue('bodyType', details.bodyType)}
-          <PlanetBodyType bodyType={details.bodyType} />
+          <PlanetBodyTypeIcon bodyType={details.bodyType} />
         </SC.Text>
         <SC.Text>{displayValue('density', details.density)}</SC.Text>
         <SC.Text>{displayValue('gravity', details.gravity)}</SC.Text>
@@ -58,6 +70,15 @@ const PlanetTemplate: FC<PlanetTemplateProps> = ({ details, onNavigateBack }) =>
         <SC.Text>{displayValue('dimension', details.dimension)}</SC.Text>
         <SC.Text>{displayValue('inclination', details.inclination)}</SC.Text>
         <SC.Text>{displayValue('escape', details.escape)}</SC.Text>
+        <PlanetCard
+          celestialBodyName={details?.aroundPlanet?.planet}
+          link={details?.aroundPlanet?.rel}
+          style={{ width: '300px' }}
+        />
+        <MoonCard
+          relatedMoons={details.moons}
+          style={{ minWidth: '250px', margin: '1rem', flex: '0 0 30%' }}
+        />
       </Container>
     </>
   )

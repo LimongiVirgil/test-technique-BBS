@@ -3,12 +3,10 @@ import React, { FC } from 'react'
 import Icon from '../Icon'
 import { Icons } from '../Icon/types'
 
-import { PlanetBodyTypeProps } from './types'
+import { PlanetBodyTypeIconProps } from './types'
 
-const PlanetBodyType: FC<PlanetBodyTypeProps> = ({ bodyType }) => {
+const PlanetBodyTypeIcon: FC<PlanetBodyTypeIconProps> = ({ bodyType }) => {
   let bodyTypeSVG
-
-  console.log(bodyType)
 
   switch (bodyType) {
     case 'Moon':
@@ -25,14 +23,12 @@ const PlanetBodyType: FC<PlanetBodyTypeProps> = ({ bodyType }) => {
   }
 
   return (
-    <>
-      <Icon
-        icon={bodyTypeSVG}
-        color="#000"
-        style={{ width: '25px', margin: '0 8px', verticalAlign: 'middle' }}
-      />
-    </>
+    <Icon
+      icon={bodyTypeSVG}
+      color="#000"
+      style={{ width: '25px', margin: '0 8px', verticalAlign: 'middle' }}
+    />
   )
 }
 
-export default PlanetBodyType
+export default PlanetBodyTypeIcon

@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 import Icon from '../../components/Icon'
 
+export const Section = styled.section`
+  margin-bottom: 1rem;
+`
+
 export const Content = styled.div`
   flex-grow: 1;
   ${(props) => props.theme.breakpoints.up('md')} {

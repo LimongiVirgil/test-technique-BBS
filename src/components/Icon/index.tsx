@@ -23,7 +23,11 @@ const Icon: FC<IconProps> = ({ className, icon, color = 'inherit', style, onClic
 
   if (onClick) {
     return (
-      <SC.Button onClick={onClick} className={className}>
+      <SC.Button
+        onClick={onClick}
+        className={className}
+        aria-label="navigate to the list of planets"
+      >
         {renderIcon()}
       </SC.Button>
     )

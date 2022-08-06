@@ -52,8 +52,8 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ planets, search, onChange }) => {
         onChange={onChange}
       />
       <TableContainer component={Paper}>
-        <Table aria-label="caption table">
-          <caption>List of planets</caption>
+        <Table aria-label="caption table" itemScope itemType="https://schema.org/ItemList">
+          <caption itemProp="description">List of planets</caption>
           <TableHead>
             <TableRow>
               <TableCell>{translate('name')}</TableCell>
@@ -64,15 +64,25 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ planets, search, onChange }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {planets.map((planet) => (
+            {planets.map((planet, index) => (
               <SC.TableRow
                 style={{ cursor: 'pointer' }}
                 key={planet.id}
                 onClick={() => handleTableRowClick(planet.id)}
+                itemProp="itemListElement"
+                itemScope
+                itemType="https://schema.org/ListItem"
+                aria-describedby={'Planet: ' + planet.name}
               >
-                <TableCell>{planet.name}</TableCell>
-                <TableCell align="right">{planet.englishName}</TableCell>
-                <TableCell align="right">{planet.bodyType}</TableCell>
+                <TableCell itemProp="name">
+                  <SC.Button aria-label={'See details of ' + planet.name}>{planet.name}</SC.Button>
+                </TableCell>
+                <TableCell align="right" itemProp="alternateName">
+                  {planet.englishName}
+                </TableCell>
+                <TableCell align="right" itemProp="description">
+                  {planet.bodyType}
+                </TableCell>
                 <TableCell align="right">{planet.discoveredBy}</TableCell>
                 <TableCell align="right">{planet.discoveryDate}</TableCell>
               </SC.TableRow>

@@ -6,13 +6,14 @@ import * as SC from './styled'
 
 const SearchInput: FC<SearchInputProps> = ({ search, placeholder, onChange }) => {
   return (
-    <SC.Div>
+    <SC.Div itemProp="potentialAction" itemScope itemType="https://schema.org/SearchAction">
       <Input
         style={{ width: '100%' }}
         placeholder={placeholder}
         type="text"
         onChange={onChange}
         value={search}
+        itemProp="query"
       />
     </SC.Div>
   )

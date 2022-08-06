@@ -51,33 +51,37 @@ const PlanetTemplate: FC<PlanetTemplateProps> = ({ details, onNavigateBack }) =>
       <Helmet>
         <title>{`${details.name} - Système solaire`} </title>
       </Helmet>
-      <Container>
+      <Container itemScope itemType="https://schema.org/CreativeWork">
         <Icon
           icon={Icons.longArrowLeft}
           color="#000"
           style={{ width: '25px', margin: '20px 0' }}
           onClick={onNavigateBack}
         />
-        <SC.Title>{details.name}</SC.Title>
-        <SC.Text>
-          {displayValue('bodyType', details.bodyType)}
-          <PlanetBodyTypeIcon bodyType={details.bodyType} />
-        </SC.Text>
-        <SC.Text>{displayValue('density', details.density)}</SC.Text>
-        <SC.Text>{displayValue('gravity', details.gravity)}</SC.Text>
-        <SC.Text>{displayValue('avgTemp', details.avgTemp)}</SC.Text>
-        <SC.Text>{displayValue('discoveryDate', details.discoveryDate)}</SC.Text>
-        <SC.Text>{displayValue('dimension', details.dimension)}</SC.Text>
-        <SC.Text>{displayValue('inclination', details.inclination)}</SC.Text>
-        <SC.Text>{displayValue('escape', details.escape)}</SC.Text>
+        <SC.Title itemProp="name">{details.name}</SC.Title>
+        <SC.Section>
+          <SC.Text itemProp="description">
+            {displayValue('bodyType', details.bodyType)}
+            <PlanetBodyTypeIcon bodyType={details.bodyType} />
+          </SC.Text>
+          <SC.Text>{displayValue('density', details.density)}</SC.Text>
+          <SC.Text>{displayValue('gravity', details.gravity)}</SC.Text>
+          <SC.Text>{displayValue('avgTemp', details.avgTemp)}</SC.Text>
+          <SC.Text itemProp="dateCreated">
+            {displayValue('discoveryDate', details.discoveryDate)}
+          </SC.Text>
+          <SC.Text itemProp="size">{displayValue('dimension', details.dimension)}</SC.Text>
+          <SC.Text>{displayValue('inclination', details.inclination)}</SC.Text>
+          <SC.Text>{displayValue('escape', details.escape)}</SC.Text>
+        </SC.Section>
         <PlanetCard
           celestialBodyName={details?.aroundPlanet?.planet}
           link={details?.aroundPlanet?.rel}
-          style={{ width: '300px' }}
+          style={{ width: '280px' }}
         />
         <MoonCard
           relatedMoons={details.moons}
-          style={{ minWidth: '250px', margin: '1rem', flex: '0 0 30%' }}
+          style={{ minWidth: '280px', margin: '1rem', flex: '0 0 30%' }}
         />
       </Container>
     </>

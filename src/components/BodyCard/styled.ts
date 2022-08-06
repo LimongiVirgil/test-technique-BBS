@@ -11,7 +11,7 @@ export const Text = styled.p`
 `
 
 export const TextError = styled(Text)`
-  color: ${(props) => props.theme.palette.colors.tomato};
+  color: ${(props) => props.theme.palette.colors.redError};
 `
 
 export const Button = styled.button`

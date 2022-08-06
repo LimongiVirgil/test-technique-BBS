@@ -24,11 +24,11 @@ const BodyCard: FC<BodyCardProps> = ({ celestialBodyName, link, style }) => {
   }
 
   return (
-    <Card style={style}>
+    <Card itemProp="itemListElement" style={style}>
       <CardContent>
-        <SC.Text>Nom: {celestialBodyName}</SC.Text>
+        <SC.Text itemProp="name">Nom: {celestialBodyName}</SC.Text>
         <CardActions>
-          <SC.Button onClick={() => handleClick(getBodyNamefromUrl!)}>
+          <SC.Button itemProp="potentialAction" onClick={() => handleClick(getBodyNamefromUrl!)}>
             Voir ces informations
           </SC.Button>
         </CardActions>

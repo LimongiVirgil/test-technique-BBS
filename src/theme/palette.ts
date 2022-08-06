@@ -4,6 +4,7 @@ import chroma from 'chroma-js'
 const colors = {
   midnightBlue: '#1D286A',
   tomato: '#FF5E4D',
+  redError: '#DE0000',
   freeSpeechBlue: '#3F50B5',
   grey: '#888888',
   kournikova: '#FFCB48',

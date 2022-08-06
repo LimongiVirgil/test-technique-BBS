@@ -13,10 +13,10 @@ const PlanetCard: FC<PlanetCardProps> = ({ celestialBodyName, link, style }) => 
   }
 
   return (
-    <SC.Div>
+    <SC.Section itemScope itemType="https://schema.org/ItemList">
       <SC.SubTitle>Planète à proximité:</SC.SubTitle>
       <BodyCard celestialBodyName={planetNameUpperCase} link={link} style={style} />
-    </SC.Div>
+    </SC.Section>
   )
 }
 

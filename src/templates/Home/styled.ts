@@ -22,6 +22,15 @@ export const Text = styled.p`
   margin: 0rem 0 1rem 0;
 `
 
+export const Button = styled.button`
+  all: unset;
+  padding: 2px 3px;
+
+  &:focus {
+    outline: 2px solid ${(props) => props.theme.palette.colors.freeSpeechBlue};
+  }
+`
+
 export const TableRow = styled(TableRowComponent)`
   &:hover {
     background-color: ${(props) => props.theme.palette.colors.whiteSmoke};

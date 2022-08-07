@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, RouteComponentProps, Switch } from 'react-router-dom'
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Layout from '../layouts/Layout'
 import { RouteType } from '../types/routes'
 
@@ -22,9 +24,13 @@ const childRoutes = (Layout: React.ElementType, routes: Array<RouteType>) =>
             exact
             render={(props: RouteComponentProps) => (
               <Layout>
+                <Header />
                 <Guard>
-                  <ElementComponent {...props} />
+                  <main>
+                    <ElementComponent {...props} />
+                  </main>
                 </Guard>
+                <Footer />
               </Layout>
             )}
           />
@@ -37,9 +43,13 @@ const childRoutes = (Layout: React.ElementType, routes: Array<RouteType>) =>
         exact
         render={(props) => (
           <Layout>
+            <Header />
             <Guard>
-              <Component {...props} />
+              <main>
+                <Component {...props} />
+              </main>
             </Guard>
+            <Footer />
           </Layout>
         )}
       />

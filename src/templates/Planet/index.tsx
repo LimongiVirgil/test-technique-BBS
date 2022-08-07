@@ -62,7 +62,10 @@ const PlanetTemplate: FC<PlanetTemplateProps> = ({ details, onNavigateBack }) =>
         <SC.Section>
           <SC.Text itemProp="description">
             {displayValue('bodyType', details.bodyType)}
-            <PlanetBodyTypeIcon bodyType={details.bodyType} />
+            <PlanetBodyTypeIcon
+              bodyType={details.bodyType} 
+              style={{ width: '25px', margin: '0 8px', verticalAlign: 'middle' }}
+            />
           </SC.Text>
           <SC.Text>{displayValue('density', details.density)}</SC.Text>
           <SC.Text>{displayValue('gravity', details.gravity)}</SC.Text>

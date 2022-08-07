@@ -7,4 +7,5 @@ export enum Icons {
 
 export type PlanetBodyTypeIconProps = {
   bodyType?: string
+  style?: React.CSSProperties
 }

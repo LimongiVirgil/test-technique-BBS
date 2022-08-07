@@ -7,6 +7,7 @@ const colors = {
   redError: '#DE0000',
   freeSpeechBlue: '#3F50B5',
   grey: '#888888',
+  darkGrey: '#595959',
   kournikova: '#FFCB48',
   kournikovaLight: chroma('#FFCB48').alpha(0.4).hex(),
   transparentBlue: '#F0F8FF',

@@ -5,7 +5,7 @@ import { Icons } from '../Icon/types'
 
 import { PlanetBodyTypeIconProps } from './types'
 
-const PlanetBodyTypeIcon: FC<PlanetBodyTypeIconProps> = ({ bodyType }) => {
+const PlanetBodyTypeIcon: FC<PlanetBodyTypeIconProps> = ({ bodyType, style }) => {
   let bodyTypeSVG
 
   switch (bodyType) {
@@ -22,13 +22,7 @@ const PlanetBodyTypeIcon: FC<PlanetBodyTypeIconProps> = ({ bodyType }) => {
       bodyTypeSVG = Icons.planet
   }
 
-  return (
-    <Icon
-      icon={bodyTypeSVG}
-      color="#000"
-      style={{ width: '25px', margin: '0 8px', verticalAlign: 'middle' }}
-    />
-  )
+  return <Icon icon={bodyTypeSVG} color="#000" style={style} />
 }
 
 export default PlanetBodyTypeIcon

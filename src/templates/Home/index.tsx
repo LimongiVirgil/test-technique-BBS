@@ -64,7 +64,7 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ planets, search, onChange }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {planets.map((planet, index) => (
+            {planets.map((planet) => (
               <SC.TableRow
                 style={{ cursor: 'pointer' }}
                 key={planet.id}
